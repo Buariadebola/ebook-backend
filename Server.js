@@ -27,6 +27,5 @@ app.use('/api', protectedRoute);
 app.use('/api/favorites', favoriteRoute);
 app.use("/api", profileRoutes);
 
-app.listen(3001, () => {
-    console.log('server listening on port 3001');
-});
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log("Server running on " + PORT));
