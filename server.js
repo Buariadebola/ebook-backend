@@ -33,6 +33,7 @@ app.use('/api', signinRoute);
 app.use('/api', protectedRoute);
 app.use('/api/favorites', favoriteRoute);
 app.use("/api", profileRoutes);
+app.use("/api", require("./routes/newsRoutes"));
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log("Server running on " + PORT));
