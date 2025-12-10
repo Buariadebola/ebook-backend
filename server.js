@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URI)
 app.use(
   cors({
     origin: [
-    'https://ebookhub-byrenova.vercel.app/',
+    'https://ebookhub-byrenova.vercel.app',
     'http://localhost:5173',
     'http://localhost:3000',
     ],
@@ -28,7 +28,6 @@ app.use(
 app.use(express.json({ limit: "10mb" })); // allows base64 image
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.json());
 app.use('/api', authRoute);
 app.use('/api', signinRoute);
 app.use('/api', protectedRoute);
